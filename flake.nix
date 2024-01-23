@@ -55,8 +55,8 @@
       let
         org = "pythoneda-shared-runtime-infrastructure";
         repo = "eventstoredb-events-infrastructure";
-        version = "0.0.0";
-        sha256 = "11mqqcmc8cz5g26whh7jfhqq0l78nr0bw9b5cpvbchvizkkdzlyn";
+        version = "0.0.1";
+        sha256 = "1wsap1068c2nznswzs5040wyc51jf8a34nx9my6dl39gf57yc8zp";
         pname = "${org}-${repo}";
         pythonpackage =
           "pythoneda.shared.runtime.infrastructure.events.infrastructure.eventstoredb";

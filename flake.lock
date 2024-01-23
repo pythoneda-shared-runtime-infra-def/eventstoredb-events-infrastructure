@@ -141,7 +141,7 @@
         "type": "github"
       }
     },
-    "pythoneda-shared-runtime-lifecycle-events": {
+    "pythoneda-shared-runtime-infrastructure-eventstoredb-events": {
       "inputs": {
         "flake-utils": [
           "flake-utils"
@@ -157,17 +157,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1705956671,
-        "narHash": "sha256-me1xSEBjfsWVS7yTXBHvPWzOmfgYW3ebLHF4E4v7UWE=",
-        "owner": "pythoneda-shared-runtime-def",
-        "repo": "lifecycle-events",
-        "rev": "8fa3efae5b7ba26cff49eade2aa0dba1c8ccdfef",
+        "lastModified": 1706011578,
+        "narHash": "sha256-p4xCBfBOKkNUdKgS8s28TXbZ6Dv4FHZnOb05mIaRcM0=",
+        "owner": "pythoneda-shared-runtime-infra-def",
+        "repo": "eventstoredb-events",
+        "rev": "5a2bd71143257631911e61a580c68025008c9609",
         "type": "github"
       },
       "original": {
-        "owner": "pythoneda-shared-runtime-def",
-        "ref": "0.0.4",
-        "repo": "lifecycle-events",
+        "owner": "pythoneda-shared-runtime-infra-def",
+        "ref": "0.0.0",
+        "repo": "eventstoredb-events",
         "type": "github"
       }
     },
@@ -178,7 +178,7 @@
         "pythoneda-shared-banner": "pythoneda-shared-banner",
         "pythoneda-shared-domain": "pythoneda-shared-domain",
         "pythoneda-shared-infrastructure": "pythoneda-shared-infrastructure",
-        "pythoneda-shared-runtime-lifecycle-events": "pythoneda-shared-runtime-lifecycle-events"
+        "pythoneda-shared-runtime-infrastructure-eventstoredb-events": "pythoneda-shared-runtime-infrastructure-eventstoredb-events"
       }
     }
   },

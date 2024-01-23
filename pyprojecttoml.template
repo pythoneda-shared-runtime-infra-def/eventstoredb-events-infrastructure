@@ -1,8 +1,8 @@
 # pyprojecttoml.template
 #
-# This file is the template for pythoneda-shared-runtime/lifecycle-events-infrastructure's pyproject.toml
+# This file is the template for pythoneda-shared-runtime-infrastructure/eventstoredb-events-infrastructure's pyproject.toml
 #
-# Copyright (C) 2024-today rydnr's pythoneda-shared-runtime-lifecycle-events-def/events-infrastructure
+# Copyright (C) 2024-today rydnr's pythoneda-shared-runtime-infra-def/eventstoredb-events-infrastructure
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ packages = [{include = "@package@"}]
 python = "^@pythonMajorMinorVersion@"
 pythoneda-shared-domain = "^@pythonedaSharedDomainVersion@"
 pythoneda-shared-infrastructure = "^@pythonedaSharedInfrastructureVersion@"
-pythoneda-shared-runtime-lifecycle-events = "^@pythonedaSharedRuntimeLifecycleEventsVersion@"
+pythoneda-shared-runtime-infrastructure-eventstore-events = "^@pythonedaSharedRuntimeInfrastructureEventstoredbEventsVersion@"
 
 [build-system]
 requires = ["poetry-core"]

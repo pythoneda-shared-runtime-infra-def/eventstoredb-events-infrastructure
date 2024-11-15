@@ -96,8 +96,8 @@
           in python.pkgs.buildPythonPackage rec {
             inherit pname version;
             projectDir = ./.;
-            pyprojectTemplateFile = ./pyprojecttoml.template;
-            pyprojectTemplate = pkgs.substituteAll {
+            pyprojectTomlTemplate = ./templates/pyproject.toml.template;
+            pyprojectToml = pkgs.substituteAll {
               authors = builtins.concatStringsSep ","
                 (map (item: ''"${item}"'') maintainers);
               desc = description;
@@ -109,7 +109,7 @@
                 pythoneda-shared-pythonlang-infrastructure.version;
               pythonedaSharedRuntimeInfrastructureEventstoredbEventsVersion =
                 pythoneda-shared-runtime-infrastructure-eventstoredb-events.version;
-              src = pyprojectTemplateFile;
+              src = pyprojectTomlTemplate;
             };
             src = pkgs.fetchFromGitHub {
               owner = org;
@@ -132,8 +132,8 @@
               cp -r ${src} .
               sourceRoot=$(ls | grep -v env-vars)
               chmod -R +w $sourceRoot
-              cat ${pyprojectTemplate}
-              cp ${pyprojectTemplate} $sourceRoot/pyproject.toml
+              cat ${pyprojectToml}
+              cp ${pyprojectToml} $sourceRoot/pyproject.toml
             '';
 
             postInstall = ''
@@ -158,7 +158,7 @@
           default =
             pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-default;
           pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-default =
-            pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-python311;
+            pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-python312;
           pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-python38 =
             shared.devShell-for {
               banner = "${
@@ -223,12 +223,28 @@
                 pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python311;
               inherit archRole layer org pkgs repo space;
             };
+          pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-python312 =
+            shared.devShell-for {
+              banner = "${
+                  pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python312
+                }/bin/banner.sh";
+              extra-namespaces = "";
+              nixpkgs-release = nixpkgsRelease;
+              package =
+                packages.pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-python312;
+              python = pkgs.python312;
+              pythoneda-shared-pythonlang-banner =
+                pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python312;
+              pythoneda-shared-pythonlang-domain =
+                pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python312;
+              inherit archRole layer org pkgs repo space;
+            };
         };
         packages = rec {
           default =
             pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-default;
           pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-default =
-            pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-python311;
+            pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-python312;
           pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-python38 =
             pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-for {
               python = pkgs.python38;
@@ -268,6 +284,16 @@
                 pythoneda-shared-pythonlang-infrastructure.packages.${system}.pythoneda-shared-pythonlang-infrastructure-python311;
               pythoneda-shared-runtime-infrastructure-eventstoredb-events =
                 pythoneda-shared-runtime-infrastructure-eventstoredb-events.packages.${system}.pythoneda-shared-runtime-infrastructure-eventstoredb-events-python311;
+            };
+          pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-python312 =
+            pythoneda-shared-runtime-infrastructure-eventstoredb-events-infrastructure-for {
+              python = pkgs.python312;
+              pythoneda-shared-pythonlang-domain =
+                pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python312;
+              pythoneda-shared-pythonlang-infrastructure =
+                pythoneda-shared-pythonlang-infrastructure.packages.${system}.pythoneda-shared-pythonlang-infrastructure-python312;
+              pythoneda-shared-runtime-infrastructure-eventstoredb-events =
+                pythoneda-shared-runtime-infrastructure-eventstoredb-events.packages.${system}.pythoneda-shared-runtime-infrastructure-eventstoredb-events-python312;
             };
         };
       });

@@ -13,16 +13,17 @@
       },
       "locked": {
         "dir": "esdbclient",
-        "lastModified": 1707207617,
-        "narHash": "sha256-1Zii05PANOJ0UtbrIFDoKP46aZX3+PA6t1QLoN/GsJE=",
+        "lastModified": 1731731825,
+        "narHash": "sha256-kOddDyUkMJEJm14yCbfW+DYceAzo/QRD8KDf92IcJJo=",
         "owner": "rydnr",
         "repo": "nix-flakes",
-        "rev": "4827d53cc8799be263b5048eb250eaee1e32e1bc",
+        "rev": "a83da54f986cb6a60dc9b71309f186e97a604cff",
         "type": "github"
       },
       "original": {
         "dir": "esdbclient",
         "owner": "rydnr",
+        "ref": "esdbclient-1.1.3",
         "repo": "nix-flakes",
         "type": "github"
       }
@@ -69,16 +70,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1707394777,
-        "narHash": "sha256-/LWkKDoOh6751ULtZJq6izDwnu3RnGscki3ewbs0Sds=",
+        "lastModified": 1731909765,
+        "narHash": "sha256-KwLX3cDzRu/lgW9jryFatoySIfCGxATzR1leH/n9LuI=",
         "owner": "pythoneda-shared-pythonlang-def",
         "repo": "banner",
-        "rev": "440ab4e7894ea0706e5004ddb8c294a0f8f02e78",
+        "rev": "7e72e325d16a769dbc7aba91a023366ff3e93fad",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-pythonlang-def",
-        "ref": "0.0.49",
+        "ref": "0.0.62",
         "repo": "banner",
         "type": "github"
       }
@@ -96,16 +97,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1707394836,
-        "narHash": "sha256-eJcKwHCGnzabQYr364O3MgBjiYMA/XYRCIuwRjh4i3U=",
+        "lastModified": 1731909823,
+        "narHash": "sha256-O34ValNAJ88X+pka794tq9Ez4Xydx/1QLGPSKjqWLcA=",
         "owner": "pythoneda-shared-pythonlang-def",
         "repo": "domain",
-        "rev": "a7394fe7ebf81978168f7d9719356b12df8e57d5",
+        "rev": "c241b0a52a229c023437e023522c49db4213a2ff",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-pythonlang-def",
-        "ref": "0.0.36",
+        "ref": "0.0.75",
         "repo": "domain",
         "type": "github"
       }
@@ -127,21 +128,21 @@
         ]
       },
       "locked": {
-        "lastModified": 1707406251,
-        "narHash": "sha256-7pPbenxcBBLi+4AxtomMq2QMzH7bQdYDTdPZtLvYB1s=",
+        "lastModified": 1731909894,
+        "narHash": "sha256-JSYSah99IAbypOME6GfvohgLTQrgyKdJbf6kipqFIMI=",
         "owner": "pythoneda-shared-pythonlang-def",
         "repo": "infrastructure",
-        "rev": "1e86a72a0b7f177a8237fec9998c81dfa7949d46",
+        "rev": "5f80c0ad0091182812d30e72b4da440aa3821043",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-pythonlang-def",
-        "ref": "0.0.31",
+        "ref": "0.0.54",
         "repo": "infrastructure",
         "type": "github"
       }
     },
-    "pythoneda-shared-runtime-infrastructure-eventstoredb-events": {
+    "pythoneda-shared-runtime-infra-eventstoredb-events": {
       "inputs": {
         "flake-utils": [
           "flake-utils"
@@ -157,16 +158,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1707426063,
-        "narHash": "sha256-H5m8069LFVwbvfiBPmPPJPBd5T+XNnx2klhThA2ZBFY=",
+        "lastModified": 1731916870,
+        "narHash": "sha256-sr9lU73wCO93tYzY66wz6mfqYpCz+HD2JNIs7Mn3r9U=",
         "owner": "pythoneda-shared-runtime-infra-def",
         "repo": "eventstoredb-events",
-        "rev": "ee6420e83e5f0e887b609f823ed643f767bb6bfd",
+        "rev": "adca6ff9445dc9f1d076c2624870a8b9151a67c0",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-runtime-infra-def",
-        "ref": "0.0.1",
+        "ref": "0.0.4",
         "repo": "eventstoredb-events",
         "type": "github"
       }
@@ -178,7 +179,7 @@
         "pythoneda-shared-pythonlang-banner": "pythoneda-shared-pythonlang-banner",
         "pythoneda-shared-pythonlang-domain": "pythoneda-shared-pythonlang-domain",
         "pythoneda-shared-pythonlang-infrastructure": "pythoneda-shared-pythonlang-infrastructure",
-        "pythoneda-shared-runtime-infrastructure-eventstoredb-events": "pythoneda-shared-runtime-infrastructure-eventstoredb-events"
+        "pythoneda-shared-runtime-infra-eventstoredb-events": "pythoneda-shared-runtime-infra-eventstoredb-events"
       }
     }
   },

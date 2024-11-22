@@ -97,16 +97,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1732128862,
-        "narHash": "sha256-of9FB2XrH0hO3N+AVPxeYtsR+yxy70pooZNAvhnA9eE=",
+        "lastModified": 1732297531,
+        "narHash": "sha256-q8u00vZC2vAphBM562tAlYuTVKUm1UsUzWz7jqrlnck=",
         "owner": "pythoneda-shared-pythonlang-def",
         "repo": "domain",
-        "rev": "e06049f4d0e2c0a90fe0b6c0e7e534ae221e8565",
+        "rev": "d4d2b3ab0fc2fe5b65bd2c2c046891322d5525ee",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-pythonlang-def",
-        "ref": "0.0.77",
+        "ref": "0.0.78",
         "repo": "domain",
         "type": "github"
       }
@@ -128,16 +128,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1732128930,
-        "narHash": "sha256-Fh6CjcelVs28+cOM+KibMrNou6wLGxnzazsvDrnxOJA=",
+        "lastModified": 1732297752,
+        "narHash": "sha256-6MkFZmIn+shnEp/8RfFtB0dkeu6CId4t0JNhNgcj0iU=",
         "owner": "pythoneda-shared-pythonlang-def",
         "repo": "infrastructure",
-        "rev": "e8e1d6d3199351211c85fb61b5171ea38e627dd4",
+        "rev": "b034b3b40f0f45682adf5d5562ec211119912063",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-pythonlang-def",
-        "ref": "0.0.56",
+        "ref": "0.0.57",
         "repo": "infrastructure",
         "type": "github"
       }
@@ -158,16 +158,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1732134175,
-        "narHash": "sha256-LJkfSM23bh/2EjQuyPyizbhk9Lo2KkgWn4p6MRlKcHg=",
+        "lastModified": 1732302293,
+        "narHash": "sha256-Elojc1HsiQ6ZHIC9vi7/S834DTPvG0eMkrJB4e4e1k4=",
         "owner": "pythoneda-shared-runtime-infra-def",
         "repo": "eventstoredb-events",
-        "rev": "48d5ee8da93b151b3337391d39ac879765af4cf8",
+        "rev": "b38afcc5583507fb523e7788422d67e625c45424",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-runtime-infra-def",
-        "ref": "0.0.6",
+        "ref": "0.0.7",
         "repo": "eventstoredb-events",
         "type": "github"
       }

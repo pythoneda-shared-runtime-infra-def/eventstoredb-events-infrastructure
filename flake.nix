@@ -121,6 +121,7 @@
 
             nativeBuildInputs = with python.pkgs; [ pip poetry-core ];
             propagatedBuildInputs = with python.pkgs; [
+              dbus-next
               pythoneda-shared-pythonlang-domain
               pythoneda-shared-pythonlang-infrastructure
               pythoneda-shared-runtime-infra-eventstoredb-events
@@ -129,23 +130,38 @@
             pythonImportsCheck = [ pythonpackage ];
 
             unpackPhase = ''
-              cp -r ${src} .
-              sourceRoot=$(ls | grep -v env-vars)
-              chmod -R +w $sourceRoot
-              cat ${pyprojectToml}
-              cp ${pyprojectToml} $sourceRoot/pyproject.toml
+              command cp -r ${src} .
+              sourceRoot=$(command ls | command grep -v env-vars)
+              command chmod -R +w $sourceRoot
+              command cp ${pyprojectToml} $sourceRoot/pyproject.toml
             '';
 
-            postInstall = ''
-              pushd /build/$sourceRoot
-              for f in $(find . -name '__init__.py'); do
+            postInstall = with python.pkgs; ''
+              command pushd /build/$sourceRoot
+              for f in $(command find . -name '__init__.py'); do
                 if [[ ! -e $out/lib/python${pythonMajorMinorVersion}/site-packages/$f ]]; then
-                  cp $f $out/lib/python${pythonMajorMinorVersion}/site-packages/$f;
+                  command cp $f $out/lib/python${pythonMajorMinorVersion}/site-packages/$f;
                 fi
               done
-              popd
-              mkdir $out/dist
-              cp dist/${wheelName} $out/dist
+              command popd
+              command mkdir -p $out/dist $out/deps/flakes $out/deps/nixpkgs
+              command cp dist/${wheelName} $out/dist
+              for dep in ${pythoneda-shared-pythonlang-domain} ${pythoneda-shared-pythonlang-infrastructure} ${pythoneda-shared-runtime-infra-eventstoredb-events}; do
+                command cp -r $dep/dist/* $out/deps || true
+                if [ -e $dep/deps ]; then
+                  command cp -r $dep/deps/* $out/deps || true
+                fi
+                METADATA=$dep/lib/python${pythonMajorMinorVersion}/site-packages/*.dist-info/METADATA
+                NAME="$(command grep -m 1 '^Name: ' $METADATA | command cut -d ' ' -f 2)"
+                VERSION="$(command grep -m 1 '^Version: ' $METADATA | command cut -d ' ' -f 2)"
+                command ln -s $dep $out/deps/flakes/$NAME-$VERSION || true
+              done
+              for nixpkgsDep in ${dbus-next}; do
+                METADATA=$nixpkgsDep/lib/python${pythonMajorMinorVersion}/site-packages/*.dist-info/METADATA
+                NAME="$(command grep -m 1 '^Name: ' $METADATA | command cut -d ' ' -f 2)"
+                VERSION="$(command grep -m 1 '^Version: ' $METADATA | command cut -d ' ' -f 2)"
+                command ln -s $nixpkgsDep $out/deps/nixpkgs/$NAME-$VERSION || true
+              done
             '';
 
             meta = with pkgs.lib; {
